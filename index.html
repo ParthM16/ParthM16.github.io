@@ -50,6 +50,18 @@
 
 				padding-left: 0px; /* Adjust the padding as needed */
 				}
+
+			.posts {
+			    display: flex;
+			    flex-wrap: wrap; /* This will wrap items onto the next line */
+			    gap: 20px; /* Add space between items */
+			}
+			
+			.posts article {
+			    flex: 1 1 calc(50% - 20px); /* This ensures each article takes 50% of the width minus the gap */
+			    box-sizing: border-box; /* Ensures the padding and border do not affect the width */
+			    margin-bottom: 20px; /* Space between rows */
+			}
 		  </style>
 	</head>
 	<body class="is-preload">
