@@ -1,217 +1,1846 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Parth Maheshwari Analyst Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
-		<style>
-			.li p {
-				margin: 0;
+<!DOCTYPE html>
+<html lang="en">
 
-				padding-left: 0px; /* Adjust the padding as needed */
-				}
-		  </style>
-	</head>
-	<body class="is-preload">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parth Maheshwari | Data Analyst &amp; Analytics Engineer</title>
+  <meta name="description"
+    content="Portfolio of Parth Maheshwari — Data Analyst, Analytics Engineer, and Data Scientist with experience driving measurable impact at Copart, Global Omni, and Wakefern." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ── RESET & BASE ─────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+    :root {
+      --bg: #07070E;
+      --bg-card: #0F0F1A;
+      --bg-lift: #141424;
+      --border: rgba(255, 255, 255, 0.07);
+      --border-hi: rgba(255, 255, 255, 0.14);
+      --text: #EEEEF2;
+      --muted: #8A8AA8;
+      --subtle: #4A4A62;
+      --accent: #4FC3F7;
+      --accent-dim: #1A3A4A;
+      --accent2: #A78BFA;
+      --accent2-dim: #2A1A4A;
+      --accent3: #34D399;
+      --accent3-dim: #0D2A20;
+      --display: 'Space Grotesk', sans-serif;
+      --body: 'Inter', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+      --r: 10px;
+      --r-lg: 16px;
+    }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Parth Maheshwari </br>Analyst Portfolio</h1>
-						<p>Data Analyst experience at Copart, skilled in MariaDB, MySQL/SQL Server, Excel, Power BI, Tableau, Pentaho, and Python</p>
-					</div>
+    html {
+      scroll-behavior: smooth;
+    }
 
-				Header
-					<header id="header">
-						<a href="index.html" class="logo">Parth Maheshwari Analyst</a>
-					</header>
+    body {
+      font-family: var(--body);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Expereince and Projects</a></li>
+    /* Hide everything while preloading */
+    body.is-preload * {
+      animation: none !important;
+      transition: none !important;
+    }
 
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/maheshwariparth/" target= "_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/ParthM16" target= "_blank"class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="mailto:contactparthmaheshwari@gmail.com" target= "_blank"class="icon fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-					</nav>
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
 
-				<!-- Main -->
-					<div id="main">
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── INTRO (in-flow, Massively-style) ─────────────── */
+    /* Sits at the top of the page in normal document flow.
+   Content (nav, hero, etc.) follows beneath it.
+   JS adds/removes .hidden on scroll — fades in/out.   */
+    #intro-overlay {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      text-align: center;
+      padding: 2rem;
+      /* subtle grid pattern */
+      background-image:
+        linear-gradient(rgba(79, 195, 247, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 195, 247, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    /* When scrolled down: fade out and slide up slightly */
+    #intro-overlay.hidden {
+      opacity: 0;
+      transform: translateY(-30px);
+      pointer-events: none;
+    }
+
+    body.is-preload #intro-overlay>* {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    #intro-overlay .intro-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
+    }
+
+    #intro-overlay .intro-name {
+      font-family: var(--display);
+      font-size: clamp(3rem, 9vw, 7.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.7s ease 0.25s, transform 0.7s ease 0.25s;
+    }
+
+    #intro-overlay .intro-name span {
+      color: var(--accent);
+    }
+
+    #intro-overlay .intro-bio {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.7s ease 0.45s, transform 0.7s ease 0.45s;
+    }
+
+    #intro-overlay .intro-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.7s ease 0.6s, transform 0.7s ease 0.6s;
+    }
+
+    #intro-overlay .intro-scroll {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      color: var(--subtle);
+      text-transform: uppercase;
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.7s ease 0.85s, transform 0.7s ease 0.85s;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    body.is-preload #intro-overlay .intro-eyebrow,
+    body.is-preload #intro-overlay .intro-name,
+    body.is-preload #intro-overlay .intro-bio,
+    body.is-preload #intro-overlay .intro-roles,
+    body.is-preload #intro-overlay .intro-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(6px);
+      }
+    }
+
+    .intro-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid var(--subtle);
+      border-bottom: 2px solid var(--subtle);
+      transform: rotate(45deg);
+    }
+
+    /* ── NAV ──────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 60px;
+      background: rgba(7, 7, 14, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-social {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .nav-social a {
+      color: var(--muted);
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-social a:hover {
+      color: var(--accent);
+    }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 2.5rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .hero-headline {
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline .hl {
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+
+    .hero-roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.625rem;
+      margin-bottom: 3rem;
+    }
+
+    .role-pill {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.85rem;
+      border-radius: 99px;
+      border: 1px solid;
+      text-transform: uppercase;
+    }
+
+    .role-pill.analyst {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-dim);
+    }
+
+    .role-pill.engineer {
+      border-color: var(--accent2);
+      color: var(--accent2);
+      background: var(--accent2-dim);
+    }
+
+    .role-pill.scientist {
+      border-color: var(--accent3);
+      color: var(--accent3);
+      background: var(--accent3-dim);
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* CTA strip between impact and about */
+    .cta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      padding: 2.5rem 2.5rem;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+    }
 
 
-						<!-- Posts -->
-							<section class="posts">
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--display);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--r);
+      border: 1px solid var(--border-hi);
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #07070E;
+    }
+
+    .btn-primary:hover {
+      background: #81D4FA;
+      border-color: #81D4FA;
+      color: #07070E;
+      text-decoration: none;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      background: var(--bg-lift);
+      text-decoration: none;
+    }
+
+    /* ── IMPACT TICKER ────────────────────────────────── */
+    #impact {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 3.5rem 2.5rem;
+    }
+
+    .impact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .impact-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0;
+    }
+
+    .impact-item {
+      padding: 1.25rem 1.5rem;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .impact-item:last-child {
+      border-right: none;
+    }
+
+    .impact-number {
+      font-family: var(--display);
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .impact-number .suffix {
+      font-size: 0.6em;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .impact-desc {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ── ABOUT ────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+    }
+
+    .about-text h2 {
+      font-family: var(--display);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.25rem;
+      line-height: 1.15;
+    }
+
+    .about-text h2 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 0.975rem;
+    }
+
+    .about-image-wrapper {
+      position: relative;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-hi);
+      aspect-ratio: 1 / 1;
+      max-width: 420px;
+      margin: 0 auto;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .about-image-wrapper:hover .about-image {
+      transform: scale(1.04);
+    }
+
+    .about-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .stack-group h4 {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--subtle);
+      margin-bottom: 0.6rem;
+    }
+
+    .stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 5px;
+      background: var(--bg-lift);
+      border: 1px solid var(--border-hi);
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── SECTION CHROME ───────────────────────────────── */
+    .section-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .section-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .section-title {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+
+    .section-divider {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── ROLE TABS ────────────────────────────────────── */
+    .role-tabs {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0;
+    }
+
+    .role-tab {
+      font-family: var(--display);
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.6rem 1.25rem;
+      border-radius: var(--r) var(--r) 0 0;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      position: relative;
+      bottom: -1px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s;
+      color: var(--muted);
+    }
+
+    .role-tab:hover {
+      color: var(--text);
+    }
+
+    .role-tab.active-analyst {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .role-tab.active-engineer {
+      color: var(--accent2);
+      border-bottom-color: var(--accent2);
+    }
+
+    .role-tab.active-scientist {
+      color: var(--accent3);
+      border-bottom-color: var(--accent3);
+    }
+
+    .role-panel {
+      display: none;
+    }
+
+    .role-panel.active {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .role-panel.active {
+        display: grid;
+        grid-template-columns: 2.8fr 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+    }
+
+    .panel-left {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel-right {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding-top: 1.75rem;
+    }
+
+    .sidebar-skill-group h4 {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+
+    .sidebar-skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    /* ── EXP CARDS ────────────────────────────────────── */
+    .exp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.75rem 2rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .exp-card:hover {
+      border-color: var(--border-hi);
+    }
+
+    .exp-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .exp-title {
+      font-family: var(--display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .exp-company {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    .exp-period {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--subtle);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      margin-top: 0.3rem;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .exp-bullets li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      padding-left: 1.25rem;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .exp-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.7rem;
+      top: 0.25em;
+    }
+
+    .exp-bullets .highlight {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .panel-engineer .exp-bullets li::before {
+      color: var(--accent2);
+    }
+
+    .panel-scientist .exp-bullets li::before {
+      color: var(--accent3);
+    }
+
+    /* ── PROJECT GRID ─────────────────────────────────── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.875rem;
+      transition: border-color 0.25s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-hi);
+      transform: translateY(-2px);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .ptag {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      padding: 0.28rem 0.65rem;
+      border-radius: 6px;
+      text-transform: uppercase;
+      transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .ptag.analyst {
+      background: var(--accent-dim);
+      color: var(--accent);
+      border: 1px solid rgba(79, 195, 247, 0.15);
+    }
+    .ptag.analyst:hover {
+      background: rgba(79, 195, 247, 0.18);
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(79, 195, 247, 0.15);
+    }
+
+    .ptag.engineer {
+      background: var(--accent2-dim);
+      color: var(--accent2);
+      border: 1px solid rgba(167, 139, 250, 0.15);
+    }
+    .ptag.engineer:hover {
+      background: rgba(167, 139, 250, 0.18);
+      border-color: var(--accent2);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(167, 139, 250, 0.15);
+    }
+
+    .ptag.scientist {
+      background: var(--accent3-dim);
+      color: var(--accent3);
+      border: 1px solid rgba(52, 211, 153, 0.15);
+    }
+    .ptag.scientist:hover {
+      background: rgba(52, 211, 153, 0.18);
+      border-color: var(--accent3);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(52, 211, 153, 0.15);
+    }
+
+    .ptag.tool {
+      background: var(--bg-lift);
+      color: var(--muted);
+      border: 1px solid var(--border-hi);
+    }
+    .ptag.tool:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--muted);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    /* Role-based sidebar highlights to match active panel colors */
+    .panel-analyst .ptag.tool {
+      border-color: rgba(79, 195, 247, 0.1);
+    }
+    .panel-analyst .ptag.tool:hover {
+      background: rgba(79, 195, 247, 0.08);
+      border-color: var(--accent);
+      color: var(--accent);
+      box-shadow: 0 4px 12px rgba(79, 195, 247, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .panel-engineer .ptag.tool {
+      border-color: rgba(167, 139, 250, 0.1);
+    }
+    .panel-engineer .ptag.tool:hover {
+      background: rgba(167, 139, 250, 0.08);
+      border-color: var(--accent2);
+      color: var(--accent2);
+      box-shadow: 0 4px 12px rgba(167, 139, 250, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .panel-scientist .ptag.tool {
+      border-color: rgba(52, 211, 153, 0.1);
+    }
+    .panel-scientist .ptag.tool:hover {
+      background: rgba(52, 211, 153, 0.08);
+      border-color: var(--accent3);
+      color: var(--accent3);
+      box-shadow: 0 4px 12px rgba(52, 211, 153, 0.15);
+      transform: translateY(-2px);
+    }
+
+    /* Style the sidebar skill headers dynamically based on parent role */
+    .panel-analyst .sidebar-skill-group h4 {
+      border-bottom-color: rgba(79, 195, 247, 0.2);
+      color: var(--accent);
+    }
+    .panel-engineer .sidebar-skill-group h4 {
+      border-bottom-color: rgba(167, 139, 250, 0.2);
+      color: var(--accent2);
+    }
+    .panel-scientist .sidebar-skill-group h4 {
+      border-bottom-color: rgba(52, 211, 153, 0.2);
+      color: var(--accent3);
+    }
+
+    .project-title {
+      font-family: var(--display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+    }
+
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--muted);
+      flex: 1;
+      line-height: 1.65;
+    }
+
+    .project-impact {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--accent3);
+      background: var(--accent3-dim);
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid rgba(52, 211, 153, 0.15);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .plink {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.2s;
+    }
+
+    .plink:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .plink svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    /* ── SKILLS ───────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-group {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.5rem;
+    }
+
+    .skill-group-title {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .cert-items {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 500px) {
+      .cert-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .cert-items {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .cert-link {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 5px;
+      background: var(--bg-lift);
+      border: 1px solid var(--border-hi);
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      line-height: 1.4;
+      height: 100%;
+    }
+
+    .cert-link:hover {
+      background: var(--accent-dim);
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── CONTACT ──────────────────────────────────────── */
+    #contact {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .contact-text h2 {
+      font-family: var(--display);
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-text p {
+      color: var(--muted);
+      font-size: 0.975rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: flex-end;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2rem 2.5rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--subtle);
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .footer-counter img {
+      height: 20px;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+
+    .footer-counter img:hover {
+      opacity: 1;
+    }
+
+    /* ── DIVIDERS ─────────────────────────────────────── */
+    .section-sep {
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 1.25rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      #hero {
+        padding: 5rem 1.25rem 3rem;
+      }
+
+      #impact {
+        padding: 2.5rem 1.25rem;
+      }
+
+      .impact-item {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 1rem;
+      }
+
+      .impact-item:last-child {
+        border-bottom: none;
+      }
+
+      #about {
+        grid-template-columns: 1fr;
+        padding: 4rem 1.25rem;
+        gap: 2.5rem;
+      }
+
+      .section-wrap {
+        padding: 4rem 1.25rem;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        align-items: flex-start;
+      }
+
+      .impact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      #intro-overlay .intro-name {
+        font-size: clamp(2.5rem, 12vw, 5rem);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      #intro-overlay,
+      #intro-overlay * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+
+  <!-- ════════════════════════════════════════════════
+     INTRO OVERLAY  (fades out on scroll, just like
+     the original Massively theme's #intro effect)
+═════════════════════════════════════════════════ -->
+  <div id="intro-overlay" role="banner" aria-label="Introduction">
+    <p class="intro-eyebrow">Available for Data Roles · USA</p>
+    <h1 class="intro-name">Parth <span>Maheshwari</span></h1>
+    <p class="intro-bio">
+      Turning raw data into decisions that grow business.
+    </p>
+    <div class="intro-roles">
+      <span class="role-pill analyst">Data Analyst / Analytics Engineer</span>
+      <span class="role-pill scientist">Data Scientist</span>
+    </div>
+    <div class="intro-scroll" aria-hidden="true">
+      <div class="intro-arrow"></div>
+      scroll to explore
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">Parth Maheshwari</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-social">
+      <a href="https://www.linkedin.com/in/maheshwariparth/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/ParthM16" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </nav>
 
 
-								<article>
-									<header>
-										<h2><a href="https://github.com/ParthM16/Experince">Data Engineer/Analyst</a></h2>
-									</header>
-									<a href="https://github.com/ParthM16/Experince" class="image fit"><img src="images/Experience.jpg" alt="Data Analyst" height="215"></a>
-									<p>Gained hands-on experience in data analysis using MySQL and contributed as a data engineer to impactful migration projects</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ParthM16/Experince" class="button">Industry Experience</a>
-									</ul>
-								</article>
+  <!-- IMPACT TICKER -->
+  <section id="impact" aria-label="Impact highlights">
+    <div class="impact-inner">
+      <p class="impact-label">Measured impact across 3 companies</p>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <span class="impact-number">
+            <span class="count-up" data-target="75">0</span><span class="suffix">%</span>
+          </span>
+          <span class="impact-desc">Reduced manual<br>data maintenance</span>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number">
+            <span class="count-up" data-target="47">0</span><span class="suffix">M+</span>
+          </span>
+          <span class="impact-desc">Records migrated<br>GCP to MariaDB</span>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number">
+            <span class="count-up" data-target="10">0</span><span class="suffix">%</span>
+          </span>
+          <span class="impact-desc">Sales increase<br>driven by product insights</span>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number">
+            <span class="count-up" data-target="20">0</span><span class="suffix">%</span>
+          </span>
+          <span class="impact-desc">Own Brand<br>penetration growth</span>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number">
+            <span class="count-up" data-target="15">0</span><span class="suffix">%</span>
+          </span>
+          <span class="impact-desc">Product adoption<br>growth via A/B testing</span>
+        </div>
+        <div class="impact-item">
+          <span class="impact-number">
+            &lt;<span class="count-up" data-target="60">0</span><span class="suffix">s</span>
+          </span>
+          <span class="impact-desc">SQL query time<br>(down from 45 min)</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-								<article>
-									<header>
-										<h2><a href="https://github.com/ParthM16/Marketing-Sentiment-Analytics">Marketing Analytics & Strategy </a></h2>
-									</header>
-									<a href="https://github.com/ParthM16/Marketing-Sentiment-Analytics" class="image fit"><img src="images/Online-Business_portfolio.jpg" alt="Marketing Sentiment Analytics" height="215"></a>
-									<p>Data Cleaning using SQL, Sentiment analysis using Python, and suggesting strategies using Power BI dashboard</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ParthM16/Marketing-Sentiment-Analytics" class="button">View Project</a>
-									</ul>
-								</article>
+  <!-- CTA STRIP -->
+  <div class="cta-strip">
+    <a href="#experience" class="btn btn-primary">See my work ↓</a>
+    <a href="mailto:contactparthmaheshwari@gmail.com" class="btn btn-ghost"><svg width="15" height="15"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="22,6 12,13 2,6" />
+      </svg>Get in touch</a>
+  </div>
 
-								<article>
-									<header>
-										<h2><a href="https://github.com/ParthM16/AtliQ-Sales-Analysis">AtliQ Sales Analysis</a></h2>
-									</header>
-									<a href="https://github.com/ParthM16/AtliQ-Sales-Analysis" class="image fit"><img src="images/Atliq.png" alt="Power BI Project" height="215"></a>
-									<p>Data exploration in MySQL, transformed data📊 and built dashboard in Power BI </p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ParthM16/AtliQ-Sales-Analysis" class="button">View Project</a>  
-										<span><a href="https://app.powerbi.com/view?r=eyJrIjoiNzk2NGJmNDEtM2E1ZC00MzA1LThjYjItMDdiYmNhYjZhMTMwIiwidCI6IjhkMWE2OWVjLTAzYjUtNDM0NS1hZTIxLWRhZDExMmY1ZmI0ZiIsImMiOjN9" class="button">View Power BI Dashboard</a></span></li>
-									</ul>
-								</article>
+  <!-- ABOUT -->
+  <section id="about" class="section-wrap">
+    <div class="section-header">
+      <span class="section-eyebrow"></span>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-divider"></div>
+    </div>
 
-								<article>
-									<header>
-										<h2><a href="https://github.com/ParthM16/Chocolate-Sales-Analysis-using-Excel"> Chocolate Sales Analysis</a></h2>
-									</header>
-									<a href="https://github.com/ParthM16/Chocolate-Sales-Analysis-using-Excel" class="image fit"><img src="images/Chocolate_sales.png" alt="Chocolate-Sales-Analysis-using-Excel" height="215"></a>
-									<p>Sales Analysis of Chocolate data in Excel using Pivot table.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ParthM16/Chocolate-Sales-Analysis-using-Excel" class="button">View Project & Dashboard</a></li>
-									</ul>
-								</article>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2>Bridging the gap between engineering and analytics.</h2>
+        <p>My background is in Computer Engineering, but my true passion is working with data. I don't just wait for
+          clean datasets to arrive, I build the pipelines to get them, and then translate that chaos into clear stories
+          that drive business decisions.</p>
+        <p>When I'm not writing SQL or tuning forecasting models, you'll find me traveling, exploring food spots for my
+          vlog, or watching cricket (massive RS45 and Dale Steyn fan!).</p>
+        <a href="mailto:contactparthmaheshwari@gmail.com" class="btn btn-ghost"
+          style="margin-top:1rem; display:inline-flex;">Get in touch →</a>
+      </div>
+      <div class="about-image-wrapper">
+        <img src="LinkedIn_Img_1.png" alt="Parth Maheshwari" class="about-image" />
+      </div>
+    </div>
+  </section>
 
-								<article>
-									<header>
-										<h2><a href="https://github.com/ParthM16/SQL-Covid-Analysis">Data exploration using SQL Server</a></h2>
-									</header>
-									<a href="https://github.com/ParthM16/SQL-Covid-Analysis" class="image fit"><img src="images/covid.jpg" alt="SQL-Covid-Analysis" height="215"></a>
-									<p>Analysis of Covid 19 dataset using SQL server.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ParthM16/SQL-Covid-Analysis" class="button">View Project</a></li>
-									</ul>
-								</article>
+  <hr class="section-sep" />
 
-								<article>
-									<header>
-										<h2><a href="https://github.com/ParthM16/Airbnb-Sales-Insights">Airbnb Sales Insights using Tableau<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ParthM16/Airbnb-Sales-Insights" class="image fit"><img src="images/seattle.jpg" alt="" height="215"></a>
-									<p>Airbnb sales Insights of seattle,USA location .</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ParthM16/Airbnb-Sales-Insights" class="button">View Project</a>      
-										<span><a href="https://public.tableau.com/app/profile/parth.maheshwari4046/viz/Airbnb_Seattle_project/Dashboard1?publish=yes" class="button">View Tableau Dashboard</a></span></li>
+  <!-- EXPERIENCE TABS -->
+  <section id="experience" class="section-wrap">
+    <div class="section-header">
+      <span class="section-eyebrow"></span>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-divider"></div>
+    </div>
 
-									</ul>
-								</article>
+    <div class="role-tabs" role="tablist" aria-label="Experience by role">
+      <button class="role-tab active-analyst" role="tab" aria-selected="true" data-panel="analyst"
+        onclick="switchTab(this,'analyst')">Data Analyst / Analytics Engineer</button>
+      <button class="role-tab" role="tab" aria-selected="false" data-panel="scientist"
+        onclick="switchTab(this,'scientist')">Data Scientist</button>
+    </div>
 
-								<article>
-									<header>
-										<h2><a href="https://github.com/ParthM16/Prediction-of-House-Price">Prediction of House Price<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ParthM16/Prediction-of-House-Price" class="image fit"><img src="images/House.webp" alt="" height="215"></a>
-									<p>Predicting the market price of a King County, USA houses</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ParthM16/Prediction-of-House-Price" class="button">View Project</a>      
-									</ul>
-								</article>
+    <!-- ANALYST / ANALYTICS ENGINEER PANEL -->
+    <div id="panel-analyst" class="role-panel panel-analyst active">
+      <div class="panel-left">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Data Analyst</div>
+              <div class="exp-company">Global Omni · Remote, USA</div>
+            </div>
+            <div class="exp-period">Nov 2024 – Apr 2026</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Drove a <span class="highlight">10% sales increase</span> and influenced investment decisions by
+              developing product insights from point-of-sale data and identifying key hero categories.</li>
+            <li>Built <span class="highlight">12-month forecasting models in Python</span> to monitor trends, optimize
+              inventory, and deliver data-driven roadmap recommendations to leadership.</li>
+          </ul>
+        </div>
 
-							</section>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Data Engineer</div>
+              <div class="exp-company">Copart, Inc · Dallas, USA</div>
+            </div>
+            <div class="exp-period">Jan 2024 – Oct 2024</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Reduced manual reference data maintenance by <span class="highlight">75%</span> and improved data
+              consistency by building a Python web application and writing complex SQL queries to optimize backend
+              database operations.</li>
+            <li>Migrated <span class="highlight">47M+ records from GCP to MariaDB</span>, reducing transfer time by 75%,
+              using batch processing through Pentaho and Python, improving data accessibility for analytics and
+              reporting.</li>
+            <li>Partnered with Product, Engineering, and cross-functional teams to gather requirements and build <span
+                class="highlight">data models</span>, ensuring alignment with business objectives.</li>
+          </ul>
+        </div>
 
-						<!-- Footer -->
-							<footer>
-								<div class="pagination">
-									<!--<a href="#" class="previous">Prev</a>-->
-									<!-- <a href="#" class="page active">1</a>
-									<a href="#" class="page">2</a>
-									<a href="#" class="page">3</a>
-									<span class="extra">&hellip;</span>
-									<a href="#" class="page">8</a>
-									<a href="#" class="page">9</a>
-									<a href="#" class="page">10</a>
-									<a href="#" class="next">Next</a> -->
-								</div>
-							</footer>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Analyst</div>
+              <div class="exp-company">Wakefern · Hoboken, USA</div>
+            </div>
+            <div class="exp-period">Oct 2022 – Dec 2022</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Drove <span class="highlight">15% growth in product adoption</span> by conducting A/B tests and
+              quantitative analysis to identify levers for improvement and validate user-facing features.</li>
+            <li>Improved Own Brand penetration by <span class="highlight">20%</span> by analyzing 100K+ records and
+              identifying three product categories outperforming national brands by 50% using Python and MS Excel.</li>
+          </ul>
+        </div>
+      </div>
 
-					</div>
+      <div class="panel-right">
+        <div class="sidebar-skill-group">
+          <h4>Query &amp; Languages</h4>
+          <div class="sidebar-skill-tags">
+            <span class="ptag tool">SQL</span>
+            <span class="ptag tool">Python</span>
+            <span class="ptag tool">Pandas</span>
+            <span class="ptag tool">CTEs</span>
+            <span class="ptag tool">Window Functions</span>
+          </div>
+        </div>
+        <div class="sidebar-skill-group">
+          <h4>Visualization</h4>
+          <div class="sidebar-skill-tags">
+            <span class="ptag tool">Power BI</span>
+            <span class="ptag tool">Tableau</span>
+            <span class="ptag tool">Streamlit</span>
+            <span class="ptag tool">MS Excel</span>
+            <span class="ptag tool">Pivot Tables</span>
+          </div>
+        </div>
+        <div class="sidebar-skill-group">
+          <h4>Databases &amp; Platforms</h4>
+          <div class="sidebar-skill-tags">
+            <span class="ptag tool">BigQuery</span>
+            <span class="ptag tool">MariaDB</span>
+            <span class="ptag tool">MySQL</span>
+            <span class="ptag tool">SQL Server</span>
+          </div>
+        </div>
+        <div class="sidebar-skill-group">
+          <h4>ETL</h4>
+          <div class="sidebar-skill-tags">
+            <span class="ptag tool">Pentaho</span>
+            <span class="ptag tool">Data Pipelines</span>
+            <span class="ptag tool">Data Migrations</span>
+          </div>
+        </div>
+        <div class="sidebar-skill-group">
+          <h4>Cloud</h4>
+          <div class="sidebar-skill-tags">
+            <span class="ptag tool">GCP</span>
+            <span class="ptag tool">AWS</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<h3>Social Media</h3>
-							<ul class="icons alt">
-								<li class="align-center"><a href="https://www.linkedin.com/in/maheshwariparth/" target= "_blank" class="icon brands alt fa-linkedin "></br></a></li>
-								<li class="align-center"><a href="https://github.com/ParthM16" target= "_blank" class="icon brands alt fa-github"></br></a></li>
-								<li class="align-center"><a href="mailto:contactparthmaheshwari@gmail.com" target= "_blank" class="icon fa-envelope"></br></a></li>	
-							</ul>
+    <!-- SCIENTIST PANEL -->
+    <div id="panel-scientist" class="role-panel panel-scientist">
+      <div class="panel-left">
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Data Analyst (Forecasting)</div>
+              <div class="exp-company">Global Omni · Remote, USA</div>
+            </div>
+            <div class="exp-period">Nov 2024 – Apr 2026</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Developed <span class="highlight">12-month time-series forecasting models</span> in Python to predict
+              inventory needs, monitor key trends, and provide data-driven business insights.</li>
+          </ul>
+        </div>
 
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <div class="exp-title">Analyst (Statistical Analysis &amp; Experimentation)</div>
+              <div class="exp-company">Wakefern · Hoboken, USA</div>
+            </div>
+            <div class="exp-period">Oct 2022 – Dec 2022</div>
+          </div>
+          <ul class="exp-bullets">
+            <li>Ran <span class="highlight">A/B tests and statistical modeling</span> across 100K+ records to validate
+              product features and identify high-performing categories, driving a 20% Own Brand penetration improvement.
+            </li>
+          </ul>
+        </div>
+      </div>
 
-						<!-- GitHub Profile Views Counter Badge -->
-							<p style="text-align: center;">
-<!-- 							  <a href="https://hits.sh/parthm16.github.io/"> -->
-							    <img alt="Visits" src="https://hits.sh/parthm16.github.io.svg?labelColor=f5f5f5">
-<!-- 							  </a> -->
-							</p>
-						</section>
-						<!-- <section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section> -->
-							<!-- <section>
-								<h3>Email</h3>
-								<p><a href="mailto:contactparthmaheshwari@gmail.com" target="_blank">contactparthmaheshwari@gmail.com</a></p>
-							</section> -->
+      <div class="panel-right">
+        <div class="sidebar-skill-group">
+          <h4>AI / Machine Learning</h4>
+          <div class="sidebar-skill-tags">
+            <span class="ptag tool">RAG</span>
+            <span class="ptag tool">Gemini API</span>
+            <span class="ptag tool">GPT</span>
+            <span class="ptag tool">FAISS</span>
+            <span class="ptag tool">Prompt Eng.</span>
+            <span class="ptag tool">Vector Search</span>
+          </div>
+        </div>
+        <div class="sidebar-skill-group">
+          <h4>Analytics Methods</h4>
+          <div class="sidebar-skill-tags">
+            <span class="ptag tool">A/B Testing</span>
+            <span class="ptag tool">Statistical Modeling</span>
+            <span class="ptag tool">Regression</span>
+            <span class="ptag tool">Gradient Boosting</span>
+          </div>
+        </div>
+        <div class="sidebar-skill-group">
+          <h4>Languages</h4>
+          <div class="sidebar-skill-tags">
+            <span class="ptag tool">NumPy</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
+  </section>
 
+  <hr class="section-sep" />
 
+  <!-- PROJECTS -->
+  <section id="projects" class="section-wrap">
+    <div class="section-header">
+      <span class="section-eyebrow"></span>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-divider"></div>
+    </div>
 
+    <div class="project-grid">
 
-					</footer>
+      <!-- Text-to-SQL AI Agent -->
+      <div class="project-card">
+        <div class="project-tags">
+          <span class="ptag scientist">AI/ML</span>
+          <span class="ptag engineer">Engineering</span>
+          <span class="ptag tool">Gemini</span>
+          <span class="ptag tool">RAG</span>
+          <span class="ptag tool">Streamlit</span>
+        </div>
+        <div class="project-title">Text-to-SQL AI Agent</div>
+        <div class="project-links">
+          <a class="plink" href="https://github.com/ParthM16/text2sql-agent" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.04 1.53 1.04.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.114 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" />
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-desc">A 12-node RAG-powered agent (Google Gemini + FAISS) that converts natural language
+          questions into SQL queries with interactive Streamlit charts. Includes a 10-layer pre-LLM guardrail that
+          prevents data integrity errors and learns from SQL corrections.</div>
+        <div class="project-impact">⚡ 45 min to 15 sec data retrieval</div>
+      </div>
 
-				<!-- Copyright
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul> 
-					</div>-->
+      <!-- Marketing Analytics -->
+      <div class="project-card">
+        <div class="project-tags">
+          <span class="ptag analyst">Analytics</span>
+          <span class="ptag tool">SQL</span>
+          <span class="ptag tool">Python</span>
+          <span class="ptag tool">Power BI</span>
+        </div>
+        <div class="project-title">Marketing Analytics &amp; Sentiment Analysis</div>
+        <div class="project-links">
+          <a class="plink" href="https://github.com/ParthM16/Marketing-Sentiment-Analytics" target="_blank"
+            rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.04 1.53 1.04.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.114 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" />
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-desc">End-to-end marketing analytics pipeline: SQL data cleaning, Python sentiment analysis,
+          and a Power BI dashboard. Identified the top 3 high-conversion product categories with 32-42%
+          moderately-positive sentiment. Recommended a shift from blog to video/social content and targeted campaigns
+          for mixed-positive reviews.</div>
+        <div class="project-impact">📊 2 strategies to actionable campaign recommendations</div>
+      </div>
 
-			</div>
+      <!-- Real Estate Price Prediction -->
+      <div class="project-card">
+        <div class="project-tags">
+          <span class="ptag scientist">Data Science</span>
+          <span class="ptag tool">Python</span>
+          <span class="ptag tool">Scikit-learn</span>
+        </div>
+        <div class="project-title">Real Estate Price Prediction</div>
+        <div class="project-links">
+          <a class="plink" href="https://github.com/ParthM16/Prediction-of-House-Price" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.04 1.53 1.04.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.114 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" />
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-desc">House price prediction model for King County, USA using multiple regression
+          techniques. Compared Linear Regression, Random Forest, and Gradient Boosting, achieving 79.4% accuracy with
+          GradientBoostingRegressor on hold-out test data.</div>
+        <div class="project-impact">🎯 79.4% accuracy on test data</div>
+      </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      <!-- Airbnb Sales Insights -->
+      <div class="project-card">
+        <div class="project-tags">
+          <span class="ptag analyst">Analytics</span>
+          <span class="ptag tool">Tableau</span>
+          <span class="ptag tool">SQL</span>
+        </div>
+        <div class="project-title">Airbnb Sales Insights: Seattle</div>
+        <div class="project-links">
+          <a class="plink" href="https://github.com/ParthM16/Airbnb-Sales-Insights" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.04 1.53 1.04.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.114 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" />
+            </svg>
+            View on GitHub
+          </a>
+          <a class="plink"
+            href="https://public.tableau.com/app/profile/parth.maheshwari4046/viz/Airbnb_Seattle_project/Dashboard1?publish=yes"
+            target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+            </svg>
+            Live Dashboard
+          </a>
+        </div>
+        <div class="project-desc">Tableau visualizations analyzing 3,800+ Seattle Airbnb listings. Identified optimal
+          rental period targeting, price-per-bedroom patterns, and neighborhood demand clusters, delivering actionable
+          recommendations to increase occupancy rates.</div>
+        <div class="project-impact">📍 3,800+ listings analyzed</div>
+      </div>
 
-	</body>
+      <!-- AtliQ Sales Analysis -->
+      <div class="project-card">
+        <div class="project-tags">
+          <span class="ptag analyst">Analytics</span>
+          <span class="ptag tool">MySQL</span>
+          <span class="ptag tool">Power BI</span>
+        </div>
+        <div class="project-title">AtliQ Sales Analysis</div>
+        <div class="project-links">
+          <a class="plink" href="https://github.com/ParthM16/AtliQ-Sales-Analysis" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.04 1.53 1.04.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.114 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" />
+            </svg>
+            View on GitHub
+          </a>
+          <a class="plink"
+            href="https://app.powerbi.com/view?r=eyJrIjoiNzk2NGJmNDEtM2E1ZC00MzA1LThjYjItMDdiYmNhYjZhMTMwIiwidCI6IjhkMWE2OWVjLTAzYjUtNDM0NS1hZTIxLWRhZDExMmY1ZmI0ZiIsImMiOjN9"
+            target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+            </svg>
+            Live Dashboard
+          </a>
+        </div>
+        <div class="project-desc">End-to-end sales analytics for a hardware company: data exploration in MySQL, ETL
+          transformations, and an interactive Power BI dashboard surfacing revenue trends, regional performance, and
+          customer segmentation insights.</div>
+        <div class="project-impact">💡 Full SQL to Power BI pipeline</div>
+      </div>
+
+      <!-- SQL Covid Analysis -->
+      <div class="project-card">
+        <div class="project-tags">
+          <span class="ptag analyst">Analytics</span>
+          <span class="ptag tool">SQL Server</span>
+        </div>
+        <div class="project-title">Data Exploration: COVID-19 using SQL</div>
+        <div class="project-links">
+          <a class="plink" href="https://github.com/ParthM16/SQL-Covid-Analysis" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.04 1.53 1.04.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.114 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" />
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+        <div class="project-desc">Deep data exploration of global COVID-19 dataset using SQL Server. Used advanced SQL
+          techniques including joins, CTEs, window functions, and aggregate queries to uncover mortality rates,
+          vaccination rollout trends, and country-level comparisons.</div>
+        <div class="project-impact">🔍 Global dataset exploration with advanced SQL</div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-sep" />
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="section-wrap">
+    <div class="section-header">
+      <span class="section-eyebrow"></span>
+      <h2 class="section-title">Certifications</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Certifications</div>
+        <div class="cert-items">
+          <a class="cert-link" href="https://verify.skilljar.com/c/78fifck9i46c" target="_blank"
+            rel="noopener">Anthropic: AI Fluency Framework & Foundations</a>
+          <a class="cert-link" href="https://www.coursera.org/account/accomplishments/specialization/7PLZH9E7WI8P"
+            target="_blank" rel="noopener">Google
+            Data Analytics</a>
+          <a class="cert-link" href="https://www.coursera.org/account/accomplishments/certificate/DNWPW9P7V8DY"
+            target="_blank" rel="noopener">IBM Python Analysis</a>
+          <a class="cert-link" href="https://www.hackerrank.com/certificates/64043e149a7a" target="_blank"
+            rel="noopener">HackerRank SQL</a>
+          <a class="cert-link" href="https://www.credly.com/badges/e487981d-6e00-4ebc-9908-8a8268f91aa0/"
+            target="_blank" rel="noopener">AWS Cloud Practitioner</a>
+          <a class="cert-link"
+            href="https://www.linkedin.com/learning/certificates/223dbbc4b8acb00d335ad6f8951ab0ff498e834cc0c6c4ae74a5508fa1a1b54d"
+            target="_blank" rel="noopener">Healthcare Data Science</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <h2>Let's talk about your data challenges.</h2>
+        <p>Open to entry-level Data Analyst, Analytics Engineer, and Data Scientist roles. Based in USA, open to remote and
+          hybrid.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:contactparthmaheshwari@gmail.com" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          contactparthmaheshwari@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/maheshwariparth/" target="_blank" rel="noopener" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
+          linkedin.com/in/maheshwariparth
+        </a>
+        <a href="https://github.com/ParthM16" target="_blank" rel="noopener" class="contact-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.04 1.53 1.04.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0112 6.8c.85.004 1.71.114 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.93.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z" />
+          </svg>
+          github.com/ParthM16
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Parth Maheshwari · Built with HTML/CSS · Hosted on GitHub Pages · 2026</p>
+    <div class="footer-counter">
+      <img alt="Visits" src="https://hits.sh/parthm16.github.io.svg?labelColor=0F0F1A&color=4FC3F7" />
+    </div>
+  </footer>
+
+  <script>
+    /* ── PRELOAD: remove is-preload after fonts settle ── */
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        document.body.classList.remove('is-preload');
+      }, 100);
+    });
+
+    /* ── INTRO OVERLAY SCROLL BEHAVIOUR ────────────────
+       Mirrors the original Massively theme exactly:
+       - scrolling down past ~20vh hides the overlay
+       - scrolling back up reveals it again
+       - once fully hidden (transitionend), removed from DOM
+    ─────────────────────────────────────────────────── */
+    (function () {
+      var overlay = document.getElementById('intro-overlay');
+      if (!overlay) return;
+
+      function onScroll() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        var threshold = window.innerHeight * 0.2;
+
+        if (scrollY > threshold) {
+          overlay.classList.add('hidden');
+        } else {
+          overlay.classList.remove('hidden');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    /* ── TAB SWITCHING ──────────────────────────────── */
+    function switchTab(btn, role) {
+      document.querySelectorAll('.role-tab').forEach(function (t) {
+        t.classList.remove('active-analyst', 'active-engineer', 'active-scientist');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.role-panel').forEach(function (p) {
+        p.classList.remove('active');
+      });
+      btn.classList.add('active-' + role);
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById('panel-' + role).classList.add('active');
+    }
+
+    /* ── COUNTER ANIMATION (triggers on scroll into view) */
+    var countersAnimated = false;
+
+    function animateCounters() {
+      if (countersAnimated) return;
+      countersAnimated = true;
+
+      document.querySelectorAll('.count-up').forEach(function (el) {
+        var target = parseInt(el.getAttribute('data-target'), 10);
+        var duration = 1600;
+        var start = performance.now();
+
+        function step(now) {
+          var elapsed = now - start;
+          var progress = Math.min(elapsed / duration, 1);
+          var ease = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(ease * target);
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    var impactSection = document.getElementById('impact');
+    if (impactSection) {
+      var counterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCounters();
+            counterObserver.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      counterObserver.observe(impactSection);
+    }
+
+    /* ── SCROLL REVEAL for cards ────────────────────── */
+    var revealEls = document.querySelectorAll('.project-card, .exp-card, .skill-group');
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry, i) {
+        if (entry.isIntersecting) {
+          setTimeout(function () {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, (i % 4) * 80);
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealEls.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+      revealObserver.observe(el);
+    });
+  </script>
+</body>
+
 </html>
