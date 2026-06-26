@@ -269,6 +269,26 @@
       color: var(--accent);
     }
 
+    /* Mobile hamburger toggle icon button */
+    .nav-toggle-label {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 22px;
+      height: 14px;
+      cursor: pointer;
+      z-index: 110;
+    }
+
+    .nav-toggle-label span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background-color: var(--text);
+      border-radius: 2px;
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.2s ease;
+    }
+
     /* ── HERO ─────────────────────────────────────────── */
     #hero {
       min-height: 100vh;
@@ -1126,8 +1146,58 @@
         padding: 0 1.25rem;
       }
 
+      .nav-toggle-label {
+        display: flex;
+      }
+
       .nav-links {
-        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(7, 7, 14, 0.98);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.25rem;
+        transform: translateY(-120%);
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease;
+        z-index: 99;
+        pointer-events: none;
+        height: calc(100vh - 60px);
+        border-bottom: 1px solid var(--border);
+        padding: 2rem 0;
+      }
+
+      .nav-links a {
+        font-size: 1.25rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      /* When checked: show menu */
+      .nav-toggle:checked ~ .nav-links {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Hamburger animation when checked */
+      .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+        opacity: 0;
+      }
+      .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+
+      .nav-social {
+        display: none; /* Hide social icons inside mobile nav header */
       }
 
       #hero {
@@ -1208,9 +1278,14 @@
     </div>
   </div>
 
-  <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">Parth Maheshwari</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" style="display: none;" />
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -1666,11 +1741,11 @@
 
   <hr class="section-sep" />
 
-  <!-- CERTIFICATIONS -->
-  <section id="certifications" class="section-wrap">
+  <!-- SKILLS & CERTIFICATIONS -->
+  <section id="skills" class="section-wrap">
     <div class="section-header">
       <span class="section-eyebrow"></span>
-      <h2 class="section-title">Certifications</h2>
+      <h2 class="section-title">Skills &amp; Certifications</h2>
       <div class="section-divider"></div>
     </div>
 
@@ -1744,6 +1819,14 @@
       setTimeout(function () {
         document.body.classList.remove('is-preload');
       }, 100);
+    });
+
+    /* ── MOBILE MENU AUTO-CLOSE ─────────────────────── */
+    document.querySelectorAll('.nav-links a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var toggle = document.getElementById('nav-toggle');
+        if (toggle) toggle.checked = false;
+      });
     });
 
     /* ── INTRO OVERLAY SCROLL BEHAVIOUR ────────────────
