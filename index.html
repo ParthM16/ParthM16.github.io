@@ -1141,11 +1141,11 @@
     }
 
     /* ── RESPONSIVE ───────────────────────────────────── */
-    body:has(.nav-toggle:checked) {
-      overflow: hidden;
-    }
-
     @media (max-width: 768px) {
+      body:has(.nav-toggle:checked) {
+        overflow: hidden;
+      }
+
       nav {
         padding: 0 1.25rem;
       }
@@ -1832,6 +1832,14 @@
         var toggle = document.getElementById('nav-toggle');
         if (toggle) toggle.checked = false;
       });
+    });
+
+    // Uncheck mobile toggle on window resize if window is wide
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 768) {
+        var toggle = document.getElementById('nav-toggle');
+        if (toggle) toggle.checked = false;
+      }
     });
 
     /* ── INTRO OVERLAY SCROLL BEHAVIOUR ────────────────
