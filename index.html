@@ -1141,6 +1141,10 @@
     }
 
     /* ── RESPONSIVE ───────────────────────────────────── */
+    body:has(.nav-toggle:checked) {
+      overflow: hidden;
+    }
+
     @media (max-width: 768px) {
       nav {
         padding: 0 1.25rem;
@@ -1159,7 +1163,7 @@
         backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 2.25rem;
         transform: translateY(-120%);
         opacity: 0;
@@ -1167,8 +1171,9 @@
         z-index: 99;
         pointer-events: none;
         height: calc(100vh - 60px);
+        overflow-y: auto;
         border-bottom: 1px solid var(--border);
-        padding: 2rem 0;
+        padding: 4rem 2rem;
       }
 
       .nav-links a {
