@@ -1236,8 +1236,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(79,195,247,0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 60% at 80% 50%, rgba(52,211,153,0.06) 0%, transparent 70%);
+        radial-gradient(ellipse 60% 50% at 20% 50%, rgba(79, 195, 247, 0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 50%, rgba(52, 211, 153, 0.06) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -1258,8 +1258,15 @@
     }
 
     @keyframes steam {
-      0%, 100% { transform: translateY(0) rotate(-3deg); }
-      50%       { transform: translateY(-6px) rotate(3deg); }
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-3deg);
+      }
+
+      50% {
+        transform: translateY(-6px) rotate(3deg);
+      }
     }
 
     .coffee-eyebrow {
@@ -1316,14 +1323,45 @@
       transform: translateY(-2px);
     }
 
-    .coffee-topic.t1 { color:#4FC3F7; border-color:rgba(79,195,247,0.35); background:rgba(79,195,247,0.07); }
-    .coffee-topic.t1:hover { box-shadow: 0 0 10px rgba(79,195,247,0.25); }
-    .coffee-topic.t2 { color:#A78BFA; border-color:rgba(167,139,250,0.35); background:rgba(167,139,250,0.07); }
-    .coffee-topic.t2:hover { box-shadow: 0 0 10px rgba(167,139,250,0.25); }
-    .coffee-topic.t3 { color:#34D399; border-color:rgba(52,211,153,0.35); background:rgba(52,211,153,0.07); }
-    .coffee-topic.t3:hover { box-shadow: 0 0 10px rgba(52,211,153,0.25); }
-    .coffee-topic.t4 { color:#FCD34D; border-color:rgba(252,211,77,0.35); background:rgba(252,211,77,0.07); }
-    .coffee-topic.t4:hover { box-shadow: 0 0 10px rgba(252,211,77,0.25); }
+    .coffee-topic.t1 {
+      color: #4FC3F7;
+      border-color: rgba(79, 195, 247, 0.35);
+      background: rgba(79, 195, 247, 0.07);
+    }
+
+    .coffee-topic.t1:hover {
+      box-shadow: 0 0 10px rgba(79, 195, 247, 0.25);
+    }
+
+    .coffee-topic.t2 {
+      color: #A78BFA;
+      border-color: rgba(167, 139, 250, 0.35);
+      background: rgba(167, 139, 250, 0.07);
+    }
+
+    .coffee-topic.t2:hover {
+      box-shadow: 0 0 10px rgba(167, 139, 250, 0.25);
+    }
+
+    .coffee-topic.t3 {
+      color: #34D399;
+      border-color: rgba(52, 211, 153, 0.35);
+      background: rgba(52, 211, 153, 0.07);
+    }
+
+    .coffee-topic.t3:hover {
+      box-shadow: 0 0 10px rgba(52, 211, 153, 0.25);
+    }
+
+    .coffee-topic.t4 {
+      color: #FCD34D;
+      border-color: rgba(252, 211, 77, 0.35);
+      background: rgba(252, 211, 77, 0.07);
+    }
+
+    .coffee-topic.t4:hover {
+      box-shadow: 0 0 10px rgba(252, 211, 77, 0.25);
+    }
 
     .coffee-cta {
       display: inline-flex;
@@ -1331,8 +1369,8 @@
       gap: 0.6rem;
       padding: 0.75rem 1.75rem;
       border-radius: 50px;
-      background: linear-gradient(90deg, rgba(79,195,247,0.15), rgba(52,211,153,0.12));
-      border: 1px solid rgba(79,195,247,0.4);
+      background: linear-gradient(90deg, rgba(79, 195, 247, 0.15), rgba(52, 211, 153, 0.12));
+      border: 1px solid rgba(79, 195, 247, 0.4);
       color: var(--text);
       font-family: var(--display);
       font-size: 0.95rem;
@@ -1343,9 +1381,9 @@
     }
 
     .coffee-cta:hover {
-      background: linear-gradient(90deg, rgba(79,195,247,0.25), rgba(52,211,153,0.2));
-      border-color: rgba(79,195,247,0.7);
-      box-shadow: 0 0 24px rgba(79,195,247,0.2), 0 0 12px rgba(52,211,153,0.15);
+      background: linear-gradient(90deg, rgba(79, 195, 247, 0.25), rgba(52, 211, 153, 0.2));
+      border-color: rgba(79, 195, 247, 0.7);
+      box-shadow: 0 0 24px rgba(79, 195, 247, 0.2), 0 0 12px rgba(52, 211, 153, 0.15);
       transform: translateY(-2px);
       text-decoration: none;
       color: var(--text);
@@ -2077,7 +2115,7 @@
 
   <hr class="section-sep" />
 
-  <!-- SKILLS & CERTIFICATIONS -->
+  <!-- CERTIFICATIONS -->
   <section id="skills" class="section-wrap">
     <div class="section-header">
       <span class="section-eyebrow"></span>
@@ -2087,7 +2125,6 @@
 
     <div class="skills-grid">
       <div class="skill-group">
-        <div class="skill-group-title">Certifications</div>
         <div class="cert-items">
           <a class="cert-link" href="https://verify.skilljar.com/c/78fifck9i46c" target="_blank"
             rel="noopener">Anthropic: AI Fluency Framework & Foundations</a>
@@ -2105,6 +2142,39 @@
             target="_blank" rel="noopener">Healthcare Data Science</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- COFFEE CHAT -->
+  <section class="coffee-chat" aria-label="Coffee chat invitation">
+    <div class="coffee-inner">
+      <span class="coffee-icon" aria-hidden="true">☕</span>
+      <p class="coffee-eyebrow">Open to conversations</p>
+      <h2 class="coffee-heading">Let's grab a <span>virtual coffee</span></h2>
+      <p class="coffee-sub">
+        Whether you want to talk <strong>data analysis</strong>, debate <strong>SQL vs. NoSQL</strong>,
+        geek out about <strong>LLMs &amp; AI agents</strong>, or just swap notes on breaking into data —
+        I'm genuinely curious and always up for a good chat.
+      </p>
+      <div class="coffee-topics">
+        <span class="coffee-topic t1">📊 Analytics Engineering</span>
+        <span class="coffee-topic t2">🤖 AI &amp; LLMs</span>
+        <span class="coffee-topic t3">🌿 dbt &amp; Data Pipelines</span>
+        <span class="coffee-topic t4">⚡ SQL Optimization</span>
+        <span class="coffee-topic t1">☁️ Cloud Platforms</span>
+        <span class="coffee-topic t2">🧠 ML &amp; Feature Engineering</span>
+        <span class="coffee-topic t3">📈 Business Intelligence</span>
+        <span class="coffee-topic t4">🔭 Emerging Tech</span>
+      </div>
+      <a href="mailto:contactparthmaheshwari@gmail.com?subject=Coffee%20Chat%20Request&body=Hi%20Parth%2C%0A%0AI'd%20love%20to%20connect%20for%20a%20virtual%20coffee%20chat!"
+        class="coffee-cta">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+        </svg>
+        Request a Coffee Chat
+      </a>
+      <p class="coffee-note">// usually responds within 24h &nbsp;·&nbsp; no agenda needed</p>
     </div>
   </section>
 
@@ -2140,35 +2210,6 @@
           github.com/ParthM16
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- COFFEE CHAT -->
-  <section class="coffee-chat" aria-label="Coffee chat invitation">
-    <div class="coffee-inner">
-      <span class="coffee-icon" aria-hidden="true">☕</span>
-      <p class="coffee-eyebrow">Open to conversations</p>
-      <h2 class="coffee-heading">Let's grab a <span>virtual coffee</span></h2>
-      <p class="coffee-sub">
-        Whether you want to talk <strong>data pipelines</strong>, debate <strong>SQL vs. NoSQL</strong>,
-        geek out about <strong>LLMs &amp; AI agents</strong>, or just swap notes on breaking into data —
-        I'm genuinely curious and always up for a good chat.
-      </p>
-      <div class="coffee-topics">
-        <span class="coffee-topic t1">📊 Analytics Engineering</span>
-        <span class="coffee-topic t2">🤖 AI &amp; LLMs</span>
-        <span class="coffee-topic t3">🌿 dbt &amp; Data Pipelines</span>
-        <span class="coffee-topic t4">⚡ SQL Optimization</span>
-        <span class="coffee-topic t1">☁️ Cloud Platforms</span>
-        <span class="coffee-topic t2">🧠 ML &amp; Feature Engineering</span>
-        <span class="coffee-topic t3">📈 Business Intelligence</span>
-        <span class="coffee-topic t4">🔭 Emerging Tech</span>
-      </div>
-      <a href="mailto:contactparthmaheshwari@gmail.com?subject=Coffee%20Chat%20Request&body=Hi%20Parth%2C%0A%0AI'd%20love%20to%20connect%20for%20a%20virtual%20coffee%20chat!" class="coffee-cta">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        Request a Coffee Chat
-      </a>
-      <p class="coffee-note">// usually responds within 24h &nbsp;·&nbsp; no agenda needed</p>
     </div>
   </section>
 
