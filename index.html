@@ -1751,14 +1751,28 @@
     }
 
     @media (max-width: 1024px) {
-      .cert-list {
-        grid-template-columns: repeat(2, 1fr);
+      .cert-card {
+        flex: 0 0 calc(50% - 0.75rem);
       }
     }
 
     @media (max-width: 768px) {
-      .cert-list {
-        grid-template-columns: 1fr;
+      .cert-card {
+        flex: 0 0 100%;
+      }
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cert-count-info {
+        padding-top: 0.5rem;
+      }
+      .cert-carousel {
+        gap: 0.5rem;
+      }
+      .cert-nav {
+        width: 36px;
+        height: 36px;
       }
     }
 
