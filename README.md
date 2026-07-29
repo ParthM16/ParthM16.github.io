@@ -28,7 +28,9 @@ Welcome to the repository for my professional portfolio website! This site is de
 ## 📁 File Structure
 
 ```text
-├── index.html            # Main site markup, styling (CSS), and logic (JS)
+├── index.html            # Site markup (HTML structure only)
+├── style.css             # All custom CSS styles (dark mode, glassmorphism, layouts, animations)
+├── main.js               # All JavaScript logic (tab switching, scroll reveal, cert slider, counters)
 ├── .gitignore            # Git exclusion rules
 ├── README.md             # Project documentation (this file)
 ├── images/               # Project-related screenshot assets
